@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: 'rqm_shovel'
+    ports:
+        - 25672:5672
+        - 35672:15672
+    volumes:
+        - ./rabbit_mq_docker_volume/rqm_shovel/data/:/var/lib/rqm_shovel/
+        - ./rabbit_mq_docker_volume/rqm_shovel/log/:/var/log/rqm_shovel
+        - ./rabbit_enabled_plugins:/etc/rabbitmq/enabled_plugins

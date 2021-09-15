@@ -1,0 +1,2 @@
+defmodule RMQDemo do
+end
